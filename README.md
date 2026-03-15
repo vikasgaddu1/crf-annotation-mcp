@@ -33,17 +33,22 @@ Before you begin, ensure you have:
 crf-annotation-mcp/
 ├── .cursor/
 │   └── mcp.json               # MCP config (create this for Cursor)
+├── docs/
+│   ├── SETUP_GUIDE.md         # Detailed setup instructions
+│   └── QUICKSTART.md          # 5-minute setup guide
+├── examples/
+│   ├── acrf.pdf               # Sample annotated CRF (FreeText format)
+│   ├── sample_annotated_crf.pdf
+│   └── example_usage.py
 ├── src/
 │   └── crf_annotation_mcp/
 │       ├── server.py          # MCP server implementation
-│       ├── parser.py           # PDF annotation extraction
-│       ├── query.py            # Annotation query engine
-│       └── models.py           # Data models (Annotation, Domain, etc.)
+│       ├── parser.py          # PDF annotation extraction
+│       ├── query.py           # Annotation query engine
+│       └── models.py          # Data models
 ├── tests/
-├── examples/
-│   ├── acrf.pdf                    # Sample annotated CRF (FreeText format)
-│   └── sample_annotated_crf.pdf    # Legacy: sticky-note format (not typical)
-└── README.md
+├── README.md
+└── pyproject.toml
 ```
 
 ## Installation
@@ -399,7 +404,7 @@ Workflow:
 
 ## Contributing
 
-Contributions welcome! Please read CONTRIBUTING.md first.
+Contributions welcome! See [docs/SETUP_GUIDE.md](docs/SETUP_GUIDE.md) for setup details.
 
 ## License
 

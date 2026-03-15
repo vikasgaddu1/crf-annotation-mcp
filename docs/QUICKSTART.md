@@ -117,7 +117,7 @@ tail -f ~/Library/Logs/Claude/mcp*.log
 
 ✅ **Working?** Check out [SETUP_GUIDE.md](SETUP_GUIDE.md) for advanced features
 
-✅ **Want to customize?** See [README.md](README.md) for architecture details
+✅ **Want to customize?** See [README.md](../README.md) for architecture details
 
 ✅ **Found a bug?** Open an issue: https://github.com/vikasgaddu1/crf-annotation-mcp/issues
 

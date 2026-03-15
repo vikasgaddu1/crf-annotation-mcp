@@ -18,11 +18,13 @@ A **Model Context Protocol (MCP) server** that enables AI assistants (like Claud
 ```
 crf-annotation-mcp/
 ├── README.md              # Main project documentation
-├── QUICKSTART.md          # 5-minute setup guide
-├── SETUP_GUIDE.md         # Detailed setup instructions
 ├── LICENSE                # MIT License
 ├── pyproject.toml         # Python project config
 ├── .gitignore             # Git ignore rules
+│
+├── docs/
+│   ├── QUICKSTART.md      # 5-minute setup guide
+│   └── SETUP_GUIDE.md     # Detailed setup instructions
 │
 ├── src/crf_annotation_mcp/
 │   ├── __init__.py        # Package exports
@@ -37,7 +39,9 @@ crf-annotation-mcp/
 │   └── test_query.py      # Query engine tests
 │
 └── examples/
-    └── example_usage.py   # Programmatic usage example
+    ├── example_usage.py   # Programmatic usage example
+    ├── acrf.pdf           # Sample annotated CRF
+    └── test_simple.py     # Simple standalone test
 ```
 
 ## How It Works
