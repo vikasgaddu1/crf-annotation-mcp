@@ -38,7 +38,6 @@ crf-annotation-mcp/
 │   └── QUICKSTART.md          # 5-minute setup guide
 ├── examples/
 │   ├── acrf.pdf               # Sample annotated CRF (FreeText format)
-│   ├── sample_annotated_crf.pdf
 │   └── example_usage.py
 ├── src/
 │   └── crf_annotation_mcp/

@@ -50,5 +50,4 @@ docs/LINKEDIN_POST.md
 docs/YOUTUBE_SCRIPT.md
 examples/*.pdf
 !examples/acrf.pdf
-!examples/sample_annotated_crf.pdf
 *.log
