@@ -49,7 +49,9 @@ pip install -e .
 
 ## Configuration
 
-Add to your MCP settings file (e.g., `claude_desktop_config.json`):
+### Claude Desktop
+
+Add to `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows):
 
 ```json
 {
@@ -69,6 +71,107 @@ Add to your MCP settings file (e.g., `claude_desktop_config.json`):
   }
 }
 ```
+
+### Cursor
+
+Add to Cursor settings (Settings → Features → Model Context Protocol):
+
+```json
+{
+  "mcpServers": {
+    "crf-annotations": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/path/to/crf-annotation-mcp",
+        "run",
+        "crf-annotation-mcp"
+      ],
+      "env": {
+        "CRF_PDF_PATH": "/path/to/your/annotated_crf.pdf"
+      }
+    }
+  }
+}
+```
+
+### Cline (VSCode Extension)
+
+Add to VSCode settings (`settings.json`):
+
+```json
+{
+  "cline.mcpServers": {
+    "crf-annotations": {
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/path/to/crf-annotation-mcp",
+        "run",
+        "crf-annotation-mcp"
+      ],
+      "env": {
+        "CRF_PDF_PATH": "/path/to/your/annotated_crf.pdf"
+      }
+    }
+  }
+}
+```
+
+### Continue (VSCode Extension)
+
+Add to `~/.continue/config.json`:
+
+```json
+{
+  "mcpServers": [
+    {
+      "name": "crf-annotations",
+      "command": "uv",
+      "args": [
+        "--directory",
+        "/path/to/crf-annotation-mcp",
+        "run",
+        "crf-annotation-mcp"
+      ],
+      "env": {
+        "CRF_PDF_PATH": "/path/to/your/annotated_crf.pdf"
+      }
+    }
+  ]
+}
+```
+
+### Zed Editor
+
+Add to Zed settings (Settings → Assistant → MCP):
+
+```json
+{
+  "assistant": {
+    "version": "2",
+    "provider": {
+      "name": "anthropic",
+      "mcpServers": {
+        "crf-annotations": {
+          "command": "uv",
+          "args": [
+            "--directory",
+            "/path/to/crf-annotation-mcp",
+            "run",
+            "crf-annotation-mcp"
+          ],
+          "env": {
+            "CRF_PDF_PATH": "/path/to/your/annotated_crf.pdf"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
+**Note:** Replace `/path/to/crf-annotation-mcp` with the actual installation path and `/path/to/your/annotated_crf.pdf` with your PDF file path.
 
 ## MCP Tools
 
