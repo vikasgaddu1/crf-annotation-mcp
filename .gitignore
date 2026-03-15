@@ -29,6 +29,7 @@ env/
 # IDE
 .vscode/
 .idea/
+.cursor/
 *.swp
 *.swo
 *~
@@ -44,5 +45,6 @@ Thumbs.db
 
 # Project specific
 examples/*.pdf
+!examples/acrf.pdf
 !examples/sample_annotated_crf.pdf
 *.log
