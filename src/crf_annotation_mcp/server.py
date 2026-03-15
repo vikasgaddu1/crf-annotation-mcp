@@ -203,8 +203,8 @@ async def call_tool(name: str, arguments: Any) -> list[TextContent]:
         return [TextContent(type="text", text=f"Error: {str(e)}")]
 
 
-async def main():
-    """Main entry point for the MCP server."""
+async def _run():
+    """Async entry point for the MCP server."""
     global query_engine
 
     # Get PDF path from environment
@@ -225,7 +225,12 @@ async def main():
         await app.run(read_stream, write_stream, app.create_initialization_options())
 
 
-if __name__ == "__main__":
+def main():
+    """Main entry point for the MCP server."""
     import asyncio
 
-    asyncio.run(main())
+    asyncio.run(_run())
+
+
+if __name__ == "__main__":
+    main()

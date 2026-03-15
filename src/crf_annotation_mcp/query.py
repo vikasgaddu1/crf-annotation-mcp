@@ -45,28 +45,20 @@ class AnnotationQuery:
         Returns:
             List of matching annotations
         """
-        results = []
+        # Start with all annotations, then narrow down with each filter
+        results = self.annotations
 
-        # Domain query
         if domain:
-            results.extend(self.by_domain.get(domain, []))
-
-            # Add SUPP domain if requested
+            domain_set = {domain}
             if include_supp and not domain.startswith("SUPP"):
-                supp_domain = f"SUPP{domain}"
-                results.extend(self.by_domain.get(supp_domain, []))
+                domain_set.add(f"SUPP{domain}")
+            results = [a for a in results if a.domain in domain_set]
 
-        # Page query
-        elif page:
-            results.extend(self.by_page.get(page, []))
+        if page is not None:
+            results = [a for a in results if a.page == page]
 
-        # Variable query
-        elif variable:
-            results.extend(self.by_variable.get(variable, []))
-
-        # No filters - return all
-        else:
-            results = self.annotations.copy()
+        if variable:
+            results = [a for a in results if a.variable == variable]
 
         return results
 
